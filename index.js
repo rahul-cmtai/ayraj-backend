@@ -17,6 +17,13 @@ app.use(express.json()); // Add middleware to parse JSON bodies
 
 app.use(fileUpload())
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    statusCode: 200,
+    message: "Welcome to Ayraj API",
+  });
+});
+
 
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/contacts", contactRoutes);
